@@ -1,0 +1,18 @@
+<div class="container">
+  <% @questions.each do |q| %>
+  <div class="media">
+    <div class="media-left">
+<!--      <img src="https://purepng.com/public/uploads/large/purepng.com-robotrobotprogrammableautomatonelectronicscyborg-1701528371874ax93z.png" class="media-object" style="width:64px">-->
+      <img src="<%= q.avatar %>" class="media-object" style="width:64px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= q.email  %> asked:</h4>
+      <div><%= time_ago_in_words q.created_at %> ago</div>
+      <%= q.body %>
+      <div>
+        <a href="<%= question_path(q) %>" class="btn btn-success btn-xs">View Answers</a>
+      </div>
+    </div>
+  </div>
+    <%end %>
+</div>
